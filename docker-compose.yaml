@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:13-alpine
+    container_name: nestjs-prisma-crud-postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./db:/var/lib/postgresql/data
